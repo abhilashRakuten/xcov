@@ -253,7 +253,7 @@ module Xcov
         end
             
         UI.important("Merging multiple coverage reports with #{paths}") 
-        if system ( "xcrun xccov merge --outReport #{output_path}/out.xccovreport --outArchive #{output_path}/out.xccovarchive #{paths}" ) then
+        if system ( "xcrun xccov merge --legacy --outReport #{output_path}/out.xccovreport --outArchive #{output_path}/out.xccovarchive #{paths}" ) then
           result_path = "#{output_path}/out.xccovreport"
         else
           UI.error("Error occured during merging multiple coverage reports")
